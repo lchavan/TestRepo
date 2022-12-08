@@ -1,27 +1,33 @@
-
 package src.main.java.arrays;
 
+
+import java.util.Arrays;
 
 public class LargestValueArray {
 
     public static void main (String args[]){
-         Integer[] intArray= {1,7,21,44,52,86};
-        int largestVal = 0;
-        int index =0;
 
-        for(int i=0; i < intArray.length; i++){
+         System.out.println("Args :"+ Arrays.toString(args));
+         if(args.length > 0) {
+             int largestVal = 0;
+             int index = 0;
+
+             for (int i = 0; i < args.length; i++) {
+                 if (Integer.parseInt(args[i]) > largestVal) {
+                     largestVal = Integer.parseInt(args[i]);
+                     index = i;
+                 }
+             }
+             System.out.println("Largest Value is " + largestVal + " and at index " + index);
+         }
+         else {
+
+             System.out.println("Invalid Parameters");
+         }
 
 
-            if(intArray[i] > largestVal){
-                largestVal=intArray[i];
-                index = i;
-            }
 
 
-
-        }
-
-        System.out.println("Largest Value is "+largestVal+" and at index "+index);
 
     }
 
